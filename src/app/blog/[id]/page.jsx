@@ -2,8 +2,21 @@ import React from 'react';
 import styles from './page.module.css';
 import Image from 'next/image';
 
-const BlogPost = () => {
-	const data = [];
+async function getData(id) {
+	const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
+		cache: 'no-store',
+	});
+
+	if (!res.ok) {
+		throw new Error('Failed to fetch data');
+	}
+
+	return res.json();
+}
+
+const BlogPost = async ({ params }) => {
+	const data = await getData(params.id);
+
 	return (
 		<div className={styles.container}>
 			<div className={styles.top}>
