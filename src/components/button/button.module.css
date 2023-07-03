@@ -1,0 +1,16 @@
+.container {
+	padding: 20px;
+	cursor: pointer;
+	background-color: #53c28b;
+	border: none;
+	border-radius: 5px;
+	font-weight: bold;
+	width: max-content;
+	color: white;
+}
+
+.container:hover {
+	background-color: #ececec;
+	color: #53c28b;
+	/* outline: 2px solid #53c28b; */
+}
