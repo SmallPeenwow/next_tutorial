@@ -51,3 +51,16 @@
 .loginButton:hover {
 	color: #53c28b;
 }
+
+.or {
+	color: #bbb;
+}
+
+.link {
+	text-decoration: underline;
+	color: #7d7c7c;
+}
+
+.link:hover {
+	color: rgb(61, 61, 61);
+}
