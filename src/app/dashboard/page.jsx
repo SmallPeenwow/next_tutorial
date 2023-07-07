@@ -67,6 +67,21 @@ const Dashboard = () => {
 					username: session.data.user.name,
 				}),
 			});
+
+			mutate();
+
+			e.target.reset();
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
+	const handleDelete = async (id) => {
+		try {
+			await fetch(`/api/posts/${id}`, {
+				method: 'DELETE',
+			});
+			mutate();
 		} catch (error) {
 			console.log(error);
 		}
@@ -84,7 +99,9 @@ const Dashboard = () => {
 										<Image src={post.img} alt='Post Image' />
 									</div>
 									<h2 className={styles.postTitle}>{post.title}</h2>
-									<span className={styles.delete}>X</span>
+									<span className={styles.delete} onClick={() => handleDelete(post._id)}>
+										X
+									</span>
 								</div>
 						  ))}
 				</div>
